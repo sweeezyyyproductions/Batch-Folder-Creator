@@ -1,0 +1,31 @@
+Batch Folder Creation Steps
+Step 1: Import Necessary Modules
+The script begins by importing the required modules: os for file and directory operations and tkinter for creating a graphical user interface (GUI).
+Step 2: Define the create_folders Function
+The create_folders function is defined to create project folders and subfolders based on user input.
+It takes two arguments: names (a list of project names) and directory (the target directory where folders should be created).
+Inside the function:It initializes two empty lists, existing_folders and created_folders, to keep track of existing and newly created folders.
+It iterates through each name in the input list:It strips any leading/trailing spaces or line breaks from the name.
+It constructs the full path for the folder using os.path.join.
+It checks if the folder already exists. If it does, it appends the name to the existing_folders list and prints a message. Otherwise, it creates the folder, along with 'Exports' and 'Assets' subfolders, and appends the name to the created_folders list.
+It prints messages indicating the folder creation status.
+Finally, it updates labels in the GUI to inform the user about the existing and created folders.
+Step 3: Define Helper Functions
+Two helper functions, browse_directory and add_names, are defined to handle directory selection and adding project names, respectively.
+browse_directory opens a file dialog to select the target directory and updates the corresponding entry field.
+add_names retrieves the project names from the text widget, processes them to remove double quotes, joins them with commas, and then calls the create_folders function. It also clears and updates the text widget with the modified names.
+Step 4: Create the GUI
+The script creates a graphical user interface (GUI) using tkinter:It creates a main window (root) and sets its title to "Folder Creator."
+It adds widgets such as labels, entry fields, buttons, and text widgets to the GUI to provide a user-friendly interface.
+Widgets are organized and displayed using the pack method.
+Step 5: Start the GUI Main Loop
+The root.mainloop() call initiates the tkinter event loop, allowing the GUI to interact with the user.
+This loop keeps the GUI running and responsive to user actions until the user closes the application.
+Logic Summary:
+The script provides a GUI for users to select a target directory and input project names, each separated by line breaks.
+When the user clicks the "Create Folders" button, the script processes the names by stripping leading/trailing spaces and line breaks, removing double quotes, and joining them with commas.
+It then creates project folders with 'Exports' and 'Assets' subfolders in the specified directory, while tracking existing and newly created folders.
+The GUI provides feedback messages to inform the user about the folder creation status, including existing folders and newly created ones.
+Users can also browse for the target directory using the "Browse" button.
+The GUI remains responsive and allows for the efficient management of project folders.
+This script is a helpful tool for maintaining an organized project folder structure and simplifying the folder creation process for various professional use cases.
